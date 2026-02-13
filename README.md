@@ -50,8 +50,8 @@ docker compose exec db psql -U postgres -d bookshelf -c “SELECT * FROM schema_
 ```
 
 ### 5. Создать книгу (POST /books)
-
-```curl -i -X POST http://localhost:8080/books -H “Content-Type: application/json” -d ‘{“title”:“Dune”,“author”:“Frank Herbert”,“year”:1965,“isbn”:“9780441172719”,“out_of_stock”:false,“read”:true,“rating”:9}’
+```
+curl -i -X POST http://localhost:8080/books -H “Content-Type: application/json” -d ‘{“title”:“Dune”,“author”:“Frank Herbert”,“year”:1965,“isbn”:“9780441172719”,“out_of_stock”:false,“read”:true,“rating”:9}’
 ```
 ### 6. Получить список книг (GET /books?page=1&limit=10)
 ```
