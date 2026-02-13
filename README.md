@@ -27,11 +27,14 @@ DB_PORT=5432
 DB_NAME=bookshelf
 DB_USER=postgres
 DB_PASSWORD=postgres
-DB_SSLMODE=disable```
+DB_SSLMODE=disable
+```
 
 ### 2. Запуск контейнеров
 
-```docker compose up -d```
+```
+docker compose up -d
+```
 
 ### 3. Проверить, что контейнеры поднялись
 
@@ -46,7 +49,8 @@ docker compose exec db psql -U postgres -d bookshelf -c “SELECT * FROM schema_
 
 ```curl -i -X POST http://localhost:8080/books -H “Content-Type: application/json” -d ‘{“title”:“Dune”,“author”:“Frank Herbert”,“year”:1965,“isbn”:“9780441172719”,“out_of_stock”:false,“read”:true,“rating”:9}’```
 ### 6. Получить список книг (GET /books?page=1&limit=10)
-```curl -i “http://localhost:8080/books?page=1&limit=10”```
+```curl -i “http://localhost:8080/books?page=1&limit=10”
+```
 
 ### 7. Получить книгу по id (GET /books/{id})
 ```curl -i http://localhost:8080/books/1```
