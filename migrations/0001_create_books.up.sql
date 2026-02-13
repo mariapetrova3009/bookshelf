@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS books (
+    id BIGSERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    author TEXT NOT NULL,
+    year INT NOT NULL,
+    isbn TEXT UNIQUE,
+    out_of_stock BOOLEAN NOT NULL DEFAULT FALSE,
+    read BOOLEAN NOT NULL DEFAULT FALSE,
+    rating INT CHECK (rating BETWEEN 0 AND 10),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
