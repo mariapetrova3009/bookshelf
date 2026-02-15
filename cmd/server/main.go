@@ -22,7 +22,6 @@ func main() {
 	}
 	defer db.Close()
 
-	// ждём миграции (migrate делает своё соединение, поэтому ретраим именно Run)
 	var migErr error
 	for i := 0; i < 30; i++ {
 		migErr = migrations.Run("migrations", cfg.MigrateDSN())
